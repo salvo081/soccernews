@@ -1,8 +1,26 @@
 import logo from './logo.svg';
 import './App.css';
 import Article from './components/Article';
+import {useState, useEffect} from "react"; 
+
 
 function App() {
+  const [news, setNews]= useState({});
+  useEffect(() => {
+    fetch(
+      `http://hn.algolia.com/api/v1/search?query=football&tags=story`
+    )
+      .then((res) => {
+        if (!res.ok) throw new Error(`Didn't work because ${res.status}`);
+        console.log(res);
+        return res.json();
+      })
+      .then((data) => {
+        console.log("data", data);
+        setNews(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="App">
       <header className="App-header">
