@@ -1,11 +1,11 @@
-export default function Article(obj) {
+export default function Article({title, url, author, created_at}) {
 
 	// console.log(obj);
 	return (
 		<article className="article">
-			<h2 className="title">{obj.title}</h2> <a className="url" href={obj.url} target="_blank">{obj.url}</a>
-			<p className="author">Author: {obj.author}</p>
-			<p className="date">Date: {new Date(obj.created_at).toDateString()}</p>
+			<h2 className="title">{title}</h2> <a className="url" href={url} target="_blank">{url}</a>
+			<p className="author">Author: {author}</p>
+			<p className="date">Date: {new Date(created_at).toDateString()}</p>
 		</article>
 	);
 }
