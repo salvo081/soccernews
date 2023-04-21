@@ -45,3 +45,9 @@
 .article h2 {
   font-size: 1.2em;
 }
+
+em {
+  background-color: yellow;
+  font-weight: bold;
+  font-style: normal;
+}
