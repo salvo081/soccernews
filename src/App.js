@@ -47,7 +47,7 @@ function App() {
         {/* {console.log(news[0])} */}
 
         {news.length && news.map((newsObj) => {
-          return <Article {...newsObj} />;
+          return <Article {...newsObj} key={newsObj.objectID} />;
         })}
         
       </main>
